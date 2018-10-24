@@ -3,20 +3,13 @@
 		<title>El Blog de Jorgito</title>
 	 <body>
         <div>
-            <h1><a href="/">El Blog de Jorgito</a></h1>
-        </div>
-
+        	<h1><a href = "/"> El Blog de Jorgito </a></h1>	
+        </div>{% for post in posts %} 
         <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">Mi primer post</a></h2>
-            <p>Estoy probando que tal funciona esta cosa.</p>
-        </div>
-
-        <div>
-            <p>publicado: 14.06.2014, 12:14</p>
-            <h2><a href="">Mi segundo post</a></h2>
-            <p>Ya que funcionó esto, ahora tengo que puro escribir tonteras.</p>
-        </div>
+        	<p> publicado: {{ post.published_date }} </p>
+        	<h1><a href = "">{{ post.title }} </a></h1>
+        	<p>{{ post.text|linebreaksbr }} </p> 
+        </div>{% endfor %}
     </body>
 
 </html>
